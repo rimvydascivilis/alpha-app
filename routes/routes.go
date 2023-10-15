@@ -8,5 +8,6 @@ import (
 var TemplatePath = util.GetEnv("TEMPLATE_PATH", "templates/")
 
 func RegisterRoutes() {
+	http.HandleFunc("/health", HealthCheckRoute)
 	http.HandleFunc("/", indexRoute)
 }
